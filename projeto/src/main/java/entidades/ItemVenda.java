@@ -4,7 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class ItemVenda {
@@ -16,7 +16,6 @@ public class ItemVenda {
 
   public Integer quantidadeParcial;
 
-  @OneToOne
-  public Produto produto;
-
+  @ManyToOne
+  public Categoria produto;
 }

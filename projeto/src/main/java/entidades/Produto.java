@@ -8,16 +8,18 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 
+@Entity
 public class Produto {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Integer codigo;
-    public String nome;
-    public String descricao;
-    public Double preco;
-    public LocalDate validade;
-    
-    @ManyToOne
-    public Categoria categoria;
-
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  public Integer codigo;
+  public String nome;
+  public String descricao;
+  public Double preco;
+  public LocalDate validade;
+  public Integer quantidade;
+  @ManyToOne
+  public Categoria categoria;
+  @ManyToOne
+  public Fabricante fabricante;
 }
